@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import LandingPage from './chapter_08/LandingPage';
+import LoginComponent from './Components/Login/LoginComponent';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <LandingPage />
+    <div className={`app-app--is-login`}>
+    <LoginComponent 
+        onSubmit ={()=> {console.log("submit")}}/>
+    </div>
 );
 
 
