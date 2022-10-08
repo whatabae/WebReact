@@ -1,0 +1,45 @@
+.wrapper{
+    margin: 2rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-rows: 1fr;/*그리드 아이템을 동일크기행으로 배치*/
+    justify-content: center;/*아이템을 중앙 정렬*/
+}
+
+.card{
+    box-shadow: 0 0 10px 5px gray; /*3차원 박스효과*/
+    border-radius: 2px; /*둥근 모서리*/
+    min-width: 18rem; /*카드의 최솔 크기*/
+    display: flex; /*아이템들을 flex로 배치*/
+}
+
+.cardimg{
+    width: 12rem;
+    height: 15rem;
+    object-fit: cover; /*이미지를 가로세로에 맞게 채움*/
+    padding: 20px;
+}
+.cardbody{
+    margin: 1rem;
+}
+
+.cardtime{ /*남은 시간 디자인*/
+    font-size: 1.4rem;
+    color: yellow;
+    margin-top: 0.6rem;
+    text-shadow: 2px 2px 2px black, 0 0 25px blue, 0 0 5px darkblue; /*그림자*/ 
+}
+
+.cardtitle{
+    line-height: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.carddescription{
+    line-height: 1.2rem;
+}
+
+.cardprice{
+    font-size: 1.4rem;
+    margin-top: 0.6rem;
+}

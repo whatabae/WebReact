@@ -1,0 +1,18 @@
+#clockframe{ /*시계 테두리 설정*/
+    border: 2px dotted yellow; /*경계선을 2px 노란색 점선*/
+    box-sizing: content-box; /*테두리 크기를 내용에 맞게 설정*/
+    width: 40%;  /*테두리 크기를 브라우져 폭의 40%로 설정*/
+    padding: 10px;
+}
+
+.time{
+    font-size: 1.8rem; /*시간 출력 글씨 */
+    font-weight: bold; /*font-weight 글씨 스타일 바꿈*/
+    color: rgb(0,154,250); 
+}
+
+.date{
+    font-size: 1.1rem;/*날짜의 글씨 크기*/
+    color: rgb(50,0,250);
+    padding-top: 0.3cm; /*시간 -날짜 표시간격 */
+}

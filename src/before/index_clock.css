@@ -1,0 +1,9 @@
+*{
+  font-family: 'Lucida Sans';
+  text-align: center; /*가운데 정렬*/
+  top : 50%;
+}
+
+body{
+  background-color: black;/*검정색 배경*/
+}
