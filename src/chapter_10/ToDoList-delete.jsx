@@ -9,6 +9,11 @@ function ToDoList(){
         {id:3, value:'과제하기'}
     ])
 
+    const DeleteToDoList = (id) => {
+        setItemList((itemList)=> itemList.filter((itemList)=>itemList.id!==id));
+        console.log(itemList);
+    }
+
     const AddToDoList =()=>{
         setItemList((prevItem)=>{
             console.log(itemList.length+1, inputItem);
@@ -31,7 +36,8 @@ function ToDoList(){
             </div>
             <div id="element-list">
                 <ul id="list">
-                    {itemList.map((item)=>{return <li key={item.id}>{item.value}</li>;})}
+                    {itemList.map((item)=>{return <li key={item.id}>{item.value}
+                        <img src="trashcan.png" onClick={()=>DeleteToDoList(item.id)} alt="trash"></img></li>;})}
                 </ul>
             </div>
         </div>
