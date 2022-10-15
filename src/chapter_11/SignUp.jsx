@@ -42,7 +42,7 @@ function SignUp(props){
 
             <label>
                 요청사항:
-                <textarea value={tavalue} onChange={handleChangeTextArea}></textarea>
+                <input value={tavalue} onChange={handleChangeTextArea}></input>
             </label>
             <button type="submit">제출</button>
         </form>

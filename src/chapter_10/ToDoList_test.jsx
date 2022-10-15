@@ -3,11 +3,28 @@ import './ToDoList.css';
 
 function ToDoList(){
     const [inputItem, setInputItem] = useState("");
+    const [renameTF, setRenameTF] = useState(true); //최초 rename true로 설정 수정X
     const [itemList, setItemList] = useState([
-        {id:1, value:'리액트 듣기'},
-        {id:2, value:'점심먹기'},
-        {id:3, value:'과제하기'}
+        {id:'1', value:'리액트 듣기'},
+        {id:'2', value:'점심먹기'},
+        {id:'3', value:'과제하기'}
     ])
+
+    //onChange={(event) => {
+    // setItemList(event.target.value);
+    const ChangeItem = (event)=>{
+        setItemList(event.target.value);
+
+    }
+
+    const RenameTF = () => {
+        if(renameTF){ //setRenameTF 호출시 T->F / F->T
+            setRenameTF(false);
+        } else{
+            setRenameTF(true);
+        }
+        
+    }
 
     const DeleteToDoList = (id) => {
         setItemList((itemList)=> itemList.filter((itemList)=>itemList.id!==id));
@@ -36,8 +53,11 @@ function ToDoList(){
             </div>
             <div id="element-list">
                 <ul id="list">
-                    {itemList.map((item)=>{return <li key={item.id}>{item.value}
-                        <img src="trashcan.png" onClick={()=>DeleteToDoList(item.id)} alt="trash"></img></li>;})}
+                    {itemList.map((item)=>{
+                        return (
+                            key==={item.id} ?() :(null)
+                        )
+                    })}
                 </ul>
             </div>
         </div>
