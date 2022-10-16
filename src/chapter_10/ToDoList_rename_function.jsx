@@ -1,12 +1,12 @@
-import React, {useState, useRef}from "react";
+import React, {useState, useRef}from "react"; //import react 
 import './ToDoList.css';
 
 function ToDoList(){
-    const [inputItem, setInputItem] = useState("");
-    const idRef = useRef("");
-    const focusref = useRef();
+    const [inputItem, setInputItem] = useState("");//input태그에 쓰일 State변수 선언
+    const idRef = useRef(""); //id를 참조할때 쓰일 ref변수 선언
+    const focusref = useRef();//focus를 위한 ref변수 선언
     const [EditTF, setEditTF] = useState(true); //최초 rename true로 설정 수정X
-    const [itemList, setItemList] = useState([
+    const [itemList, setItemList] = useState([ //state 배열 선언
         {id:1, value:'리액트 듣기'},
         {id:2, value:'점심먹기'},
         {id:3, value:'과제하기'}
@@ -14,24 +14,21 @@ function ToDoList(){
 
     const RenameToDoList = (id)=>{//인덱스 값으로 들어가서 +1됨
         itemList.map((item)=>{//itemList를 뿌리면서 맞는 id 찾기
-            console.log("id : ", id, "item.id:", item.id, "inputItem : ", inputItem );
             if(item.id===id){
                 idRef.current = id;
-                setInputItem(item.value);
+                setInputItem(item.value);//id가 일치하면 해당하는 값을 input에 넣는다.
             };
         });
-        console.log("id :",id, "/itemList.value :", itemList.value, "idRef", idRef.current);
-        focusref.current.focus();
-        setEditTF(false);
+        focusref.current.focus(); //focus
+        setEditTF(false);// T->F 수정버튼으로 바꿈
     }
 
-    const DeleteToDoList = (id) => {
+    const DeleteToDoList = (id) => { //id를 받아서 delete 
         setItemList((itemList)=> itemList.filter((itemList)=>itemList.id!==id));
-        console.log(itemList);
     }
 
-    const EditToDoList =()=>{
-        setItemList(item =>
+    const EditToDoList =()=>{//ToDoList 수정 
+        setItemList(item => //setItemList을 받아서 map 으로 뿌리고 id가 같으면 수정
             item.map(obj => {
             if (obj.id === idRef.current) {
             return {...obj, value:inputItem};   
@@ -39,19 +36,19 @@ function ToDoList(){
             return obj;
         }),
         );
-    setEditTF(true);
+    setInputItem(""); //input 초기화
+    setEditTF(true); //F->T 수정버튼 -> 추가버튼 
     };
 
-    const AddToDoList =()=>{
+    const AddToDoList =()=>{ //add List 
         setItemList((prevItem)=>{
-            console.log(itemList.length+1, inputItem);
-            return[...prevItem,
+            return[...prevItem,//itemList받아서 뿌리고 뒤에 추가
                 {
                     id:itemList.length+1, value:inputItem,
                 },
             ]
         });
-        setInputItem("");
+        setInputItem(""); //input 초기화
     }
 
     return(

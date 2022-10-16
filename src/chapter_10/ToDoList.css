@@ -34,10 +34,10 @@ input{
 }
 
 button{
-    padding: 7px, 14px;
-    background-color: blue;
+    padding: 7px;
     border: none;
     border-radius: 7px;
+    background-color: blue;
     color: #fafafa;
 }
 
