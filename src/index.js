@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import ProfileCard from './chapter_12/ProfileCard';
+import Specialization from './chapter_12/Prj_9_1_2/Specialization';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
-    <ProfileCard/>
+    <Specialization/>
 );
