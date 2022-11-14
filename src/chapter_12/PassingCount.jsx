@@ -26,7 +26,7 @@ const SecondChild = (props) =>{
     )
 };
 
-const ThirdChild = (props) =>{
+function ThirdChild(props){
     console.log(`자식3 ${props.data}`);
     return(
         <div className="third">

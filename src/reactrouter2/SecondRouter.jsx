@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import './SecondRouter.css';
 import Home from './Home';
 import About from './About';
-import Profile from './Profile';
 import BookRoutes from './BookRoutes';
 import NotFound from './NotFound';
 
@@ -12,7 +11,7 @@ function SecondRouter(){
         <nav>
             <Link to ={'/'} className="item">Home</Link>
             <Link to ={'about'} className="item">About</Link>
-            <Link to ={'/profile'} className="item">Profile</Link>
+            <Link to ={'/books'} className="item">Books</Link>
         </nav>
         <Routes>
             <Route path="/" element= {<Home/>}></Route>

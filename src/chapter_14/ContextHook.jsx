@@ -25,10 +25,10 @@ function ThemeButton(){
 }
 
 function Button(){
-    const value = useContext(ThemeContext);
+    const item = useContext(ThemeContext);
     return(
         <div>
-        <div style={{margin:50, padding:50, backgroundColor:value,}}>
+        <div style={{margin:50, padding:50, backgroundColor:item,}}>
                 <p>컨텍스트를 가지고 데이터를 전달하는 예시</p>
                 <button>확인</button>
         </div>

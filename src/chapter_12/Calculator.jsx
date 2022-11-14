@@ -34,8 +34,8 @@ function Calculator(props){
         setScale("f");
     };
 
-    const celsius = scale === "f"? tryConvert(temperature,toCelsius): temperature;
-    const fahrenhiet = scale === "c" ? tryConvert(temperature, toFahrenhiet): temperature;
+    const celsius = ( scale === "f" ? tryConvert(temperature,toCelsius): temperature) ;
+    const fahrenhiet = ( scale === "c" ? tryConvert(temperature, toFahrenhiet): temperature );
 
     return(
         <div>
